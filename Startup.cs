@@ -62,10 +62,10 @@ namespace EmprestimoFerramentas
             });
 
             // DataContext InMemory
-            services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
+            // services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
 
             // DataContext SqlServer
-            // services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
+            services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
 
             // Injeção de dependência - linha não necessária
             // services.AddScoped<DataContext, DataContext>(); //AddScoped: um datacontext por conexão
